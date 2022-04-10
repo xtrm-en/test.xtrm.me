@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -8,9 +9,7 @@ export default function Home() {
         <title>xtrm.me · landing</title>
         <link rel="icon" href="/favicon.ico" />
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-        // regular metadata
+        {/** regular metadata */}
         <meta name="title" content="xtrm's website" />
         <meta name="description" content="xtrm's personal website / portfolio" />
         <meta name="keywords" content="xtrm,minecraft,kotlin,developer,jvm" />
@@ -18,7 +17,7 @@ export default function Home() {
         <meta name="language" content="English" />
         <meta name="author" content="xtrm" />
 
-        // opengraph
+        {/** opengraph */}
         <meta property="og:title" content="xtrm's website" />
         <meta property="og:site_name" content="xtrm.me" />
         <meta property="og:url" content="https://xtrm.me" />
@@ -28,7 +27,7 @@ export default function Home() {
         <meta property="og:image" content="https://xtrm.me/assets/img/logo.png" />
         <meta name="theme-color" content="#FFFFFF" />
 
-        // le twitter
+        {/** le twitter */}
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:site" content="@xtrmdev" />
         <meta property="twitter:description" content="xtrm's personal website / portfolio" />
