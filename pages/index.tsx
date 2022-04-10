@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>xtrm.me · landing</title>
+        <title>xtrm.me · home</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="canonical" href="https://xtrm.me/" />
 
@@ -38,13 +38,11 @@ export default function Home() {
         <meta property="twitter:image" content="https://xtrm.me/assets/img/logo.png" />
       </Head>
 
-      <NavBar />
+      <>
+        <NavBar />
 
-      <main>
-        
-      </main>
-
-      <Footer />
+        <Footer />
+      </>
     </>
   )
 }
