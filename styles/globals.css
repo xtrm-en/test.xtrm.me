@@ -11,3 +11,10 @@ body {
   background-color: black;
   color: white;
 }
+
+.x-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

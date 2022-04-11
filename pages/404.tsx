@@ -1,15 +1,13 @@
 // 404.js
-import Link from 'next/link'
+import NavBar from '../components/NavBar'
 
 export default function FourOhFour() {
     return (
         <>
-            <h1>404 - Page Not Found</h1>
-            <Link href="/">
-                <a>
-                    Go back home
-                </a>
-            </Link>
+            <NavBar />
+            <div className="x-centered">
+                <h1 className="font-bold text-8xl">404.</h1>
+            </div>
         </>
     )
 }
