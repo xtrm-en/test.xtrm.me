@@ -45,7 +45,7 @@ export default function NavBar() {
             </div>
             {shouldDisplay ? 
             <div className="sm:container sm:px-4 sm:py-2 sm:flex sm:flex-wrap sm:justify-around sm:items-center sm:mx-auto">
-                <div className="px-2 pb-3 space-y-1 sm:p-0 sm:py-2 sm:m-0 sm:items-center sm:space-x-16 sm:flex">
+                <div className="px-2 pb-3 sm:p-0 sm:py-2 sm:m-0 sm:items-center sm:space-x-16 sm:flex">
                     <Link href="/">
                         <a className="hover:text-purple-300 hover:underline block px-3 py-2 sm:flex sm:p-0" title="the landing page">home</a>
                     </Link>
