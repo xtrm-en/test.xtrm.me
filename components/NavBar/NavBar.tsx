@@ -2,29 +2,29 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function NavBar() {
-    const [screenSize, getDimension] = useState({
-        dynamicWidth: window.innerWidth,
-        dynamicHeight: window.innerHeight
+    const [screenSize, setDimension] = useState({
+        dynamicWidth: -1,
+        dynamicHeight: -1
     });
 
-    const setDimension = () => {
-        getDimension({
-            dynamicWidth: window.innerWidth,
-            dynamicHeight: window.innerHeight
-        })
-    }
-
     useEffect(() => {
-        window.addEventListener('resize', setDimension);
+        const set = () => {
+            setDimension({
+                dynamicWidth: window.innerWidth,
+                dynamicHeight: window.innerHeight
+            })
+        }
+
+        window.addEventListener('resize', set);
 
         return (() => {
-            window.removeEventListener('resize', setDimension);
+            window.removeEventListener('resize', set);
         })
     }, [screenSize])
 
     const [open, setOpen] = useState(false);
 
-    const shouldDisplay = screenSize.dynamicWidth > 640 || open
+    const shouldDisplay = screenSize.dynamicWidth == -1 || screenSize.dynamicWidth > 640 || open
 
     return (
         <>
