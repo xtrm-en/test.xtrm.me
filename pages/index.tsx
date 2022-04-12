@@ -1,7 +1,5 @@
 import Head from "next/head";
 import LandingIntro from "../components/index/LandingIntro";
-import PostsListing from "../components/index/PostsListing";
-import ProjectsListing from "../components/index/ProjectsListing";
 import NavBar from "../components/NavBar";
 
 export default function Page() {

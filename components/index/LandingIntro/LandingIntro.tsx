@@ -20,7 +20,7 @@ export default function LandingIntro() {
                             heya 👋.
                             <Anime translateX={[-70, 0]} opacity={[0, 1]} delay={delayName}>
                                 <span className="font-semibold">
-                                    I'm killian.
+                                    I&apos;m killian.
                                 </span>
                             </Anime>
                         </IntroText>
