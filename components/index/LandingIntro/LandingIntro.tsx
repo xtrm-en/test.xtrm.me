@@ -17,7 +17,7 @@ export default function LandingIntro() {
                 <div className="m-auto flex-row content-center">
                     <Anime easing={'easeOutElastic(1, .8)'} translateY={[-50, 0]} opacity={[0, 1]} delay={delayGreeter}>
                         <IntroText className="font-extralight">
-                            heya 👋.
+                            heya 👋
                             <Anime easing={'easeOutElastic(1, .8)'} translateX={[-70, 0]} opacity={[0, 1]} delay={delayName} duration={1000}>
                                 <span className="font-semibold">
                                     I&apos;m killian.
