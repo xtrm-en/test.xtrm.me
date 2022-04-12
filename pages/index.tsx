@@ -1,9 +1,13 @@
+import LandingIntro from "../components/index/LandingIntro";
+import PostsListing from "../components/index/PostsListing";
+import ProjectsListing from "../components/index/ProjectsListing";
+
 export default function Page() {
     return (
         <>
-            <h1 className="py-5 text-center font-bold">
-                In construction
-            </h1>
+            <LandingIntro/>
+            <PostsListing />
+            <ProjectsListing />
         </>
     )
 }

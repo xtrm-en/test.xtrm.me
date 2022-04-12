@@ -7,8 +7,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@styled-icons/boxicons-regular": "^10.38.0",
+    "@styled-icons/boxicons-solid": "^10.38.0",
     "next": "12.1.4",
     "react": "18.0.0",
+    "react-anime": "^4.1.1",
     "react-dom": "18.0.0",
     "styled-components": "^5.3.5"
   },
