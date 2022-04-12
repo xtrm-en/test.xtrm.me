@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 interface NavBarProps {
-    baseDelay: number
+    baseDelay?: number;
 }
 
 export default function NavBar(props: NavBarProps) {
@@ -19,7 +19,7 @@ export default function NavBar(props: NavBarProps) {
 
     const startDelay = 0;
     const delayInc = 50;
-    let delay = (isDropdown ? 0 : props.baseDelay) + startDelay - delayInc;
+    let delay = (isDropdown ? 0 : (props.baseDelay || 0)) + startDelay - delayInc;
 
     return (
         <div className="fixed w-screen bg-black">

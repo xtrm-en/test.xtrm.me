@@ -9,7 +9,7 @@ const IntroText = styled.div`
 
 export default function LandingIntro() {
     const delayGreeter = 500;
-    const delayName = delayGreeter + 300;
+    const delayName = delayGreeter + 600;
 
     return (
         <>
@@ -18,7 +18,7 @@ export default function LandingIntro() {
                     <Anime easing={'easeOutElastic(1, .8)'} translateY={[-50, 0]} opacity={[0, 1]} delay={delayGreeter}>
                         <IntroText className="font-extralight">
                             heya 👋.
-                            <Anime translateX={[-70, 0]} opacity={[0, 1]} delay={delayName}>
+                            <Anime easing={'easeOutElastic(1, .8)'} translateX={[-70, 0]} opacity={[0, 1]} delay={delayName} duration={1000}>
                                 <span className="font-semibold">
                                     I&apos;m killian.
                                 </span>

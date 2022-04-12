@@ -21,7 +21,7 @@ export default function Page() {
                 <meta property="twitter:image" content="https://xtrm.me/assets/img/logo.png" />
             </Head>
 
-            <NavBar baseDelay={2000}/>
+            <NavBar baseDelay={2500}/>
 
             <LandingIntro/>
         </>
