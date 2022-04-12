@@ -26,18 +26,20 @@ export default function NavBar(props: NavBarProps) {
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 sm:hidden">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="absolute inset-y-0 left-0 flex items-center">
-                        <button type="button" onClick={_ => setDroppedDown(!droppedDown)} className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-900" aria-controls="mobile-menu" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            {droppedDown ?
-                                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                                :
-                                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            }
-                        </button>
+                        <Anime easing={'easeOutElastic(1, .8)'} translateX={[-100, 0]} opacity={[0, 1]} delay={props.baseDelay}>
+                            <button type="button" onClick={_ => setDroppedDown(!droppedDown)} className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-900" aria-controls="mobile-menu" aria-expanded="false">
+                                <span className="sr-only">Open main menu</span>
+                                {droppedDown ?
+                                    <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                    :
+                                    <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                }
+                            </button>
+                        </Anime>
                     </div>
                 </div>
             </div>
