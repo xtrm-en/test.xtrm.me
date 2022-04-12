@@ -1,20 +1,25 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import useWindowDimensions from '../../lib/useWindowDimensions';
 
 import dynamic from 'next/dynamic'
-import useWindowDimensions from '../../lib/useWindowDimensions';
 const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
-export default function NavBar() {
+interface NavBarProps {
+    baseDelay: number
+}
+
+export default function NavBar(props: NavBarProps) {
     const { width } = useWindowDimensions();
 
     const [droppedDown, setDroppedDown] = useState(false);
 
-    const shouldDisplay = width >= 640 || droppedDown;
+    const isDropdown = width < 640;
+    const shouldDisplay = !isDropdown || droppedDown;
 
     const startDelay = 0;
     const delayInc = 50;
-    let delay = startDelay - delayInc;
+    let delay = (isDropdown ? 0 : props.baseDelay) + startDelay - delayInc;
 
     return (
         <div className="fixed w-screen bg-black">
