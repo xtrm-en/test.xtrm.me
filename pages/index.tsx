@@ -6,6 +6,7 @@ export default function Page() {
     return (
         <>
             <Head>
+                <title>xtrm.me · home</title>
                 <meta name="title" content="xtrm's website" />
                 <meta name="description" content="xtrm's personal website / portfolio" />
                 <meta name="keywords" content="xtrm,minecraft,kotlin,developer,jvm" />
@@ -21,7 +22,7 @@ export default function Page() {
                 <meta property="twitter:image" content="https://xtrm.me/assets/img/logo.png" />
             </Head>
 
-            <NavBar baseDelay={2500}/>
+            <NavBar baseDelay={1500}/>
 
             <LandingIntro/>
         </>

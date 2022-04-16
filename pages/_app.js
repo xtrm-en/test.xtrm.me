@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>xtrm.me · home</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="canonical" href="https://xtrm.me/" />
 
