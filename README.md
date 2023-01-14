@@ -1,3 +1,3 @@
-# test.xtrm.me
+# xtrm.me
 
-the bleeding edge.
+my personal website, version 2: javascript electric boogaloo

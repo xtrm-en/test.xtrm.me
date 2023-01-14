@@ -1,0 +1,78 @@
+/* The cool kids corner */
+
+@keyframes tv-zoom-in {
+    0% {
+        transform: scale(.0, .1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(1, .05);
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes copyright {
+    0% {
+        scale: 1.2;
+        opacity: 0;
+    }   
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pronouns {
+    0% { scale: 1.1; }
+    50% { scale: 1; }
+    100% { scale: 1.1; }
+}
+
+/* Main TV-Zoom / Fade-in animations */
+
+.container {
+    animation: tv-zoom-in 1s cubic-bezier(.88, .1, 0, 1.01) 0s 1 forwards;
+}
+
+.card {
+    opacity: 0;
+    animation: fade-in .5s ease-in-out .5s 1 forwards; 
+}
+
+.profile > .picture {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out 1s 1 forwards;
+}
+
+.profile .name-display {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out 1.25s 1 forwards;
+}
+
+.copyright {
+    opacity: 0;
+    animation: copyright 1s ease-in-out 2s 1 forwards;
+}
+
+/* Other animations */
+
+.profile > .name-display > .pronouns {
+    animation: pronouns 1s ease-in-out 0s infinite forwards;
+}
