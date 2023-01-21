@@ -21,7 +21,7 @@
     0% {
         scale: 1.2;
         opacity: 0;
-    }   
+    }
 
     100% {
         scale: 1;
@@ -40,9 +40,17 @@
 }
 
 @keyframes pronouns {
-    0% { scale: 1.1; }
-    50% { scale: 1; }
-    100% { scale: 1.1; }
+    0% {
+        scale: 1.1;
+    }
+
+    50% {
+        scale: 1;
+    }
+
+    100% {
+        scale: 1.1;
+    }
 }
 
 /* Main TV-Zoom / Fade-in animations */
@@ -51,12 +59,12 @@
     animation: tv-zoom-in 1s cubic-bezier(.88, .1, 0, 1.01) 0s 1 forwards;
 }
 
-.card {
+.card:nth-child(2) {
     opacity: 0;
-    animation: fade-in .5s ease-in-out .5s 1 forwards; 
+    animation: fade-in .5s ease-in-out 1.5s 1 forwards;
 }
 
-.profile > .picture {
+.profile>.picture {
     opacity: 0;
     animation: fade-in 1s ease-in-out 1s 1 forwards;
 }
@@ -73,6 +81,40 @@
 
 /* Other animations */
 
-.profile > .name-display > .pronouns {
+.profile>.name-display>.pronouns {
     animation: pronouns 1s ease-in-out 0s infinite forwards;
+}
+
+a,
+.menu>label {
+    position: relative;
+}
+
+a:before,
+.menu>label:before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    visibility: hidden;
+    background-color: var(--accent-color);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu>label:before {
+    bottom: -.25em;
+}
+
+a:hover:before,
+.menu>label:hover:before {
+    visibility: visible;
+    width: 100%;
+    left: 0;
+}
+
+a:hover,
+.menu>label:hover {
+    text-decoration: none;
 }

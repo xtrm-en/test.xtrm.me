@@ -12,15 +12,15 @@
     <meta name="description" content="xtrm's personal website / portfolio" />
     <meta name="keywords" content="xtrm,minecraft,kotlin,developer,jvm" />
 
-    <meta property="og:url" content="https://xtrm.me" />
+    <meta property="og:url" content="https://test.xtrm.me" />
     <meta property="og:description" content="xtrm's personal website / portfolio" />
-    <meta property="og:image" content="https://xtrm.me/assets/img/logo.png" />
+    <meta property="og:image" content="https://test.xtrm.me/assets/img/logo.png" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
 
     <meta property="twitter:title" content="xtrm's website" />
     <meta property="twitter:description" content="xtrm's personal website / portfolio" />
-    <meta property="twitter:image" content="https://xtrm.me/assets/img/logo.png" />
+    <meta property="twitter:image" content="https://test.xtrm.me/assets/img/logo.png" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
@@ -32,13 +32,13 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="rotating-border container">
         <div class="main">
             <div class="profile card">
                 <img class="picture" alt="Profile Picture" src="./assets/img/logo.png" draggable="false" />
                 <div class="name-display">
                     <div class="cool-bg">
-                        <img alt="Waving Hand" src="./assets/img/waving-hand.png" draggable="false"/>
+                        <img alt="Waving Hand" src="./assets/img/waving-hand.png" draggable="false" />
                     </div>
                     <div class="name">
                         <h1><span class="bold">Hi</span>, I'm <span class="cool-bg">killian.</span></h1>
@@ -48,11 +48,31 @@
                     </div>
                 </div>
                 <div class="">
-                    
+
                 </div>
             </div>
             <div class="content card">
+                <div class="menu">
+                    <input type="radio" id="menu-about" name="navToggle" />
+                    <label for="menu-about">about me</label>
 
+                    <input type="radio" id="menu-projects" name="navToggle" checked="true" />
+                    <label for="menu-projects">projects</label>
+
+                    <input type="radio" id="menu-blog" name="navToggle" />
+                    <label for="menu-blog">blog</label>
+
+                    <input type="radio" id="menu-donate" name="navToggle" />
+                    <label for="menu-donate">donate!!!</label>
+                </div>
+                <div class="page">
+                    <div id="about-page">
+                        About page
+                    </div>
+                    <div id="projects-page">
+                        Projects page
+                    </div>
+                </div>
             </div>
         </div>
     </div>
