@@ -1,0 +1,96 @@
+:root {
+    --background: #020207;
+    --text: #ffffff;
+    --scrolling-text: #030308;
+    --scroll_anim-time: 40s;
+}
+
+.pre-content {
+    display: none;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    src: url(assets/ttf/JetBrainsMono.ttf);
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    src: url(assets/ttf/JetBrainsMono-Italic.ttf);
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+main > .background {
+    background-color: var(--background);
+    min-height: 100dvh;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes scroll_rtl {
+    from { transform: translate(0%, -120dvh); }
+    to { transform: translate(-50%, -120dvh); }
+}
+
+@keyframes scroll_ltr {
+    from { transform: translate(-50%, -120dvh); }
+    to { transform: translate(0%, -120dvh); }
+}
+
+main > .background .scroll::before {
+    content: "welcome to my mind welcome to my mind welcome to my mind welcome to my mind";
+}
+main > .background .scroll {
+    font-family: 'Inter', sans-serif;
+    color: var(--scrolling-text);
+    font-weight: 900;
+    font-size: 25vh;
+    text-transform: uppercase;
+    rotate: -10deg;
+}
+
+main > .background .scroll.rtl {
+    animation: scroll_rtl var(--scroll_anim-time) linear infinite;
+}
+
+main > .background .scroll.ltr {
+    animation: scroll_ltr var(--scroll_anim-time) linear infinite;
+}
+
+@supports (font-variation-settings: normal) {
+    main > .background .scroll { font-family: 'Inter var', sans-serif; }
+}
+
+main > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main > .content * {
+    position: relative;
+}

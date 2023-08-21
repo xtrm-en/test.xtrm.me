@@ -1,86 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>x's home</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xtrm.me &mdash; hi</title>
+        <!-- SEO -->
+        <meta name="description" content="x's home">
+        <meta name="author" content="xtrm">
+        <meta name="keywords" content="xtrm, x's home, x's, home, xtrm's home, xtrm's, xtrm home, xtrm's home">
+        <meta name="language" content="English">
 
-    <!-- SEO / Metadata -->
-    <meta name="title" content="xtrm's website" />
-    <meta name="description" content="xtrm's personal website / portfolio" />
-    <meta name="keywords" content="xtrm,minecraft,kotlin,developer,jvm" />
+        <meta name="robots" content="index, follow">
+        <meta name="google" content="notranslate">
 
-    <meta property="og:url" content="https://test.xtrm.me" />
-    <meta property="og:description" content="xtrm's personal website / portfolio" />
-    <meta property="og:image" content="https://test.xtrm.me/assets/img/logo.png" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="400" />
+        <!-- Open Graph -->
+        <meta property="og:title" content="x's home">
+        <meta property="og:description" content="x's home">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://xtrm.me">
+        <meta property="og:image" content="https://xtrm.me/assets/img/og.png">
+        <meta property="og:site_name" content="x's home">
+        <meta property="og:locale" content="en_US">
 
-    <meta property="twitter:title" content="xtrm's website" />
-    <meta property="twitter:description" content="xtrm's personal website / portfolio" />
-    <meta property="twitter:image" content="https://test.xtrm.me/assets/img/logo.png" />
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@xtrmdev">
+        <meta name="twitter:creator" content="@xtrmdev">
+        <meta name="twitter:title" content="x's home">
+        <meta name="twitter:description" content="x's home">
+        <meta name="twitter:image" content="https://xtrm.me/assets/img/og.png">
+        <meta name="twitter:image:alt" content="x's home">
+        <meta name="twitter:domain" content="xtrm.me">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/font.css" />
-    <link rel="stylesheet" href="./assets/css/global.css" />
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="assets/img/favicons/site.webmanifest">
+        <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#020207">
+        <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
 
-    <!-- Animations can be disabled by commenting out this file -->
-    <link rel="stylesheet" href="./assets/css/animate.css" />
-</head>
+        <!-- Global -->
+        <meta name="theme-color" content="#020207">
 
-<body>
-    <div class="rotating-border container">
-        <div class="main">
-            <div class="profile card">
-                <img class="picture" alt="Profile Picture" src="./assets/img/logo.png" draggable="false" />
-                <div class="name-display">
-                    <div class="cool-bg">
-                        <img alt="Waving Hand" src="./assets/img/waving-hand.png" draggable="false" />
-                    </div>
-                    <div class="name">
-                        <h1><span class="bold">Hi</span>, I'm <span class="cool-bg">killian.</span></h1>
-                    </div>
-                    <div class="pronouns">
-                        <i>(any/all)</i>
-                    </div>
-                </div>
-                <div class="">
+        <!-- CDN Styles (TODO: move this out) -->
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
+        <!-- Site Styles -->
+        <link rel="stylesheet" href="assets/css/minireset.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/intro-animation.css">
+
+        <!-- Site Javascript -->
+        <!-- empty :3 -->
+    </head>
+    <body>
+        <div class="pre-content">
+            <h5 class="text warning">Photosensitivity Warning</h5>
+            <div class="anim hi">
+                <h3 class="text hi">Hi</h3>
+                <div class="pre-img">
+                    <img src="assets/img/wave.png" alt="waving hand gesture">
                 </div>
             </div>
-            <div class="content card">
-                <div class="menu">
-                    <input type="radio" id="menu-about" name="navToggle" />
-                    <label for="menu-about">about me</label>
-
-                    <input type="radio" id="menu-projects" name="navToggle" checked="true" />
-                    <label for="menu-projects">projects</label>
-
-                    <input type="radio" id="menu-blog" name="navToggle" />
-                    <label for="menu-blog">blog</label>
-
-                    <input type="radio" id="menu-donate" name="navToggle" />
-                    <label for="menu-donate">donate!!!</label>
+            <div class="anim fullscreen-text">
+                <h1 class="text welcome"></h1>
+                <span class="text">
+                    <h2>to </h2>
+                    <h2>my</h2>
+                </span>
+            </div>
+            <div class="anim fullscreen-final">
+                <div class="container">
+                    <h1 class="text">Home</h1>
                 </div>
-                <div class="page">
-                    <div id="about-page">
-                        About page
-                    </div>
-                    <div id="projects-page">
-                        Projects page
-                    </div>
+                <div class="container">
+                    <h1 class="text">Life</h1>
                 </div>
+                <div class="container">
+                    <h1 class="text">Work</h1>
+                </div>
+                <!-- <h1>Mind</h1>
+                <h1>Mind</h1>
+                <h1>Mind</h1> -->
             </div>
         </div>
-    </div>
-
-    <!-- temporary footer -->
-    <footer class="copyright">
-        <h4>&copy; (copyright) => { <a href="https://xtrm.me">xtrm</a>, 2023. };</h4>
-    </footer>
-</body>
-
+        <main>
+            <div class="background">
+                <!-- You call this shit code, I call that future-proofing -->
+                <h1 class="scroll rtl"></h1>
+                <h1 class="scroll ltr"></h1>
+                <h1 class="scroll rtl"></h1>
+                <h1 class="scroll ltr"></h1>
+                <h1 class="scroll rtl"></h1>
+                <h1 class="scroll ltr"></h1>
+                <h1 class="scroll rtl"></h1>
+                <h1 class="scroll ltr"></h1>
+            </div>
+            <div class="content">
+            </div>
+        </main>
+    </body>
 </html>
