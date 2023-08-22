@@ -12,10 +12,14 @@
     --hi_wave-freq: 1.25s;
 
     --hi_page-anim-delay: 7.7125s;
-    --fullscreen-text_page-anim-delay: 2s;
+    --present_page-anim-delay: 2.875s;
+    /* --hi_page-anim-delay: 0s; */
+    /* --present_page-anim-delay: 0s; */
+
+    --fullscreen-text_page-anim-delay: 2.73s;
     --fullscreen-final_page-anim-delay: 0.875s;
 
-    --total-anim-delay: calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay));
+    --total-anim-delay: calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay));
 }
 
 @keyframes page_dissapear {
@@ -46,9 +50,9 @@
     position: relative;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     min-height: 100dvh;
     width: 100%;
-    align-items: center;
     overflow: hidden;
     gap: var(--hi_gap);
 }
@@ -58,6 +62,15 @@
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
     text-transform: uppercase; 
+}
+
+.pre-content .text.bold {
+    font-weight: 900;
+}
+
+.pre-content .text.italic {
+    font-style: italic;
+    font-weight: lighter;
 }
 
 /* Warning label */
@@ -192,33 +205,89 @@
     }
 }
 
+/* Present (1.5) animation */
+
+.pre-content .anim.present {
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
+}
+
+@keyframes present_pop-in {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    65% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.pre-content .anim.present .text {
+    font-size: 5rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: none;
+    animation: present_pop-in .75s cubic-bezier(0.075, 0.82, 0.165, 1) var(--hi_page-anim-delay) forwards;
+}
+
 /* Fullscreen text (2) animation */
 
 .pre-content .anim.fullscreen-text {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay)) forwards;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100dvh;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay)) forwards;
 }
 
-@keyframes write_welcome {
-    0% { content: ""; }
-    10% { content: "w"; }
-    20% { content: "we"; }
-    30% { content: "wel"; }
-    40% { content: "welc"; }
-    50% { content: "welco"; }
-    60% { content: "welcom"; }
-    70% { content: "welcome"; }
-    100% { content: "welcome"; }
+.pre-content .anim.fullscreen-text > * {
+    line-height: 15.875rem; /* 82.353% */
+    height: 33%;
+    font-size: 24.5625rem;
+    letter-spacing: 1.32813rem; 
+    font-weight: 500;
+}
+
+@keyframes type_welcome {
+    0.00% { content: 'w'; }
+    39.33% { content: 'we'; }
+    47.19% { content: 'wel'; }
+    62.92% { content: 'welc'; }
+    76.40% { content: 'welco'; }
+    92.13% { content: 'welcom'; }
+    100.00% { content: 'welcome'; }
 }
 
 .pre-content > .anim.fullscreen-text > .welcome::before {
-    animation: write_welcome 1s linear 0s forwards;
+    content: "";
+    opacity: 1;
+    font-weight: 100;
+    animation: type_welcome .73s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
     color: #fff;
+}
+
+.pre-content > .anim.fullscreen-text > *:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-25vw);
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + 1.5s) forwards;
+}
+
+.pre-content > .anim.fullscreen-text > *:nth-child(3) {
+    opacity: 0;
+    transform: translateX(25vw);
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + 1.875s) forwards;
 }
 
 /* Final flashing text (3) animation */
 
 .pre-content > .anim.fullscreen-final {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay)) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay)) forwards;
 }
 
 .pre-content > .anim.fullscreen-final {
@@ -257,25 +326,25 @@
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(1) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .125s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .125s) forwards;
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(2) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .25s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .25s) forwards;
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(3) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .375s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .375s) forwards;
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(4) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .5s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .5s) forwards;
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(5) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .625s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .625s) forwards;
 }
 
 .pre-content > .anim.fullscreen-final > .container:nth-child(6) {
-    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .75s) forwards;
+    animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + .75s) forwards;
 }
