@@ -7,16 +7,16 @@
 
     --hi_gap: 4.75rem;
     --hi_wave-size: 14.625rem;
-    --hi_anim-delay: 3s;
+    --hi_anim-delay: 3.25s;
     --hi_anim-speed: 2.625s;
-    --hi_wave-freq: 1.25s;
+    --hi_wave-freq: 1.15s;
 
     --hi_page-anim-delay: 7.7125s;
-    --present_page-anim-delay: 2.875s;
+    --present_page-anim-delay: 1.25s;
     /* --hi_page-anim-delay: 0s; */
     /* --present_page-anim-delay: 0s; */
 
-    --fullscreen-text_page-anim-delay: 2.73s;
+    --fullscreen-text_page-anim-delay: 1.25s;
     --fullscreen-final_page-anim-delay: 0.875s;
 
     --total-anim-delay: calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay));
@@ -241,6 +241,7 @@
 
 .pre-content .anim.fullscreen-text {
     flex-direction: column;
+    align-items: flex-start;
     overflow: hidden;
     height: 100dvh;
     animation: page_dissapear 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay)) forwards;
@@ -268,20 +269,20 @@
     content: "";
     opacity: 1;
     font-weight: 100;
-    animation: type_welcome .73s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
+    animation: type_welcome .45s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
     color: #fff;
 }
 
 .pre-content > .anim.fullscreen-text > *:nth-child(2) {
     opacity: 0;
-    transform: translateX(-25vw);
-    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + 1.5s) forwards;
+    transform: translateX(10vw);
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .6s) forwards;
 }
 
 .pre-content > .anim.fullscreen-text > *:nth-child(3) {
     opacity: 0;
-    transform: translateX(25vw);
-    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + 1.875s) forwards;
+    transform: translateX(65vw);
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .9s) forwards;
 }
 
 /* Final flashing text (3) animation */
