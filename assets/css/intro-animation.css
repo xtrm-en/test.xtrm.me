@@ -9,13 +9,10 @@
     --hi_wave-size: 14.625rem;
     --hi_anim-delay: 3.25s;
     --hi_anim-speed: 2.625s;
-    --hi_wave-freq: 1.15s;
+    --hi_wave-freq: 1s;
 
-    --hi_page-anim-delay: 7.7125s;
-    --present_page-anim-delay: 1.25s;
-    /* --hi_page-anim-delay: 0s; */
-    /* --present_page-anim-delay: 0s; */
-
+    --hi_page-anim-delay: 7.375s;
+    --present_page-anim-delay: 1.625s;
     --fullscreen-text_page-anim-delay: 1.25s;
     --fullscreen-final_page-anim-delay: 0.875s;
 
@@ -28,7 +25,8 @@
 
 .pre-content {
     display: block;
-    position: absolute;
+    position:
+    absolute;
     top: 0;
     left: 0;
     z-index: 100;
@@ -230,11 +228,26 @@
     }
 }
 
+.pre-content .anim.present {
+    flex-direction: row;
+}
+
 .pre-content .anim.present .text {
     font-size: 5rem;
     font-family: 'Inter', sans-serif;
     text-transform: none;
-    animation: present_pop-in .75s cubic-bezier(0.075, 0.82, 0.165, 1) var(--hi_page-anim-delay) forwards;
+    text-align: center;
+    animation: present_pop-in .65s cubic-bezier(0.075, 0.82, 0.165, 1) var(--hi_page-anim-delay) forwards;
+}
+
+@media (max-width: 500px) {
+    .pre-content .anim.present .name {
+        display: block;
+    }
+
+    .pre-content .anim.present .period {
+        font-size: 0px;
+    }
 }
 
 /* Fullscreen text (2) animation */
@@ -257,11 +270,11 @@
 
 @keyframes type_welcome {
     0.00% { content: 'w'; }
-    39.33% { content: 'we'; }
-    47.19% { content: 'wel'; }
-    62.92% { content: 'welc'; }
-    76.40% { content: 'welco'; }
-    92.13% { content: 'welcom'; }
+    7.04% { content: 'we'; }
+    9.30% { content: 'wel'; }
+    49.90% { content: 'welc'; }
+    59.28% { content: 'welco'; }
+    85.05% { content: 'welcom'; }
     100.00% { content: 'welcome'; }
 }
 
@@ -269,7 +282,7 @@
     content: "";
     opacity: 1;
     font-weight: 100;
-    animation: type_welcome .45s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
+    animation: type_welcome .5s steps(7) calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
     color: #fff;
 }
 
