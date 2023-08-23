@@ -11,12 +11,22 @@
     --hi_anim-speed: 2.625s;
     --hi_wave-freq: 1s;
 
-    --hi_page-anim-delay: 7.375s;
-    --present_page-anim-delay: 1.625s;
+    --hi_page-anim-delay: 6.375s;
+    --present_page-anim-delay: 1.125s;
     --fullscreen-text_page-anim-delay: 1.25s;
     --fullscreen-final_page-anim-delay: 0.875s;
 
-    --total-anim-delay: calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay));
+    --intro-anim-duration: calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + var(--fullscreen-text_page-anim-delay) + var(--fullscreen-final_page-anim-delay));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --intro-anim-duration: 0s;
+    }
+    
+    .pre-content {
+        animation: page_dissapear 0s linear 0s forwards;
+    }
 }
 
 @keyframes page_dissapear {
@@ -25,8 +35,7 @@
 
 .pre-content {
     display: block;
-    position:
-    absolute;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
@@ -34,13 +43,7 @@
     width: 100%;
     overflow: hidden;
     background-color: var(--background);
-    animation: page_dissapear 0s linear var(--total-anim-delay) forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .pre-content {
-        animation: page_dissapear 0s linear 0s forwards;
-    }
+    animation: page_dissapear 0s linear var(--intro-anim-duration) forwards;
 }
 
 .pre-content .anim {
@@ -143,11 +146,11 @@
     50% {
         opacity: 1;
     }
-    75% {
+    65% {
         transform: translate(calc((var(--hi_wave-size) / 2 + var(--hi_gap) / 2)), -10px);
         opacity: 1;
     }
-    85% {
+    75% {
         transform: translate(calc((var(--hi_wave-size) / 2 + var(--hi_gap) / 2)), 0px);
         opacity: 1;
     }
@@ -282,20 +285,20 @@
     content: "";
     opacity: 1;
     font-weight: 100;
-    animation: type_welcome .5s steps(7) calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
+    animation: type_welcome .45s steps(7) calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay)) forwards;
     color: #fff;
 }
 
 .pre-content > .anim.fullscreen-text > *:nth-child(2) {
     opacity: 0;
     transform: translateX(10vw);
-    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .6s) forwards;
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .3s) forwards;
 }
 
 .pre-content > .anim.fullscreen-text > *:nth-child(3) {
     opacity: 0;
     transform: translateX(65vw);
-    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .9s) forwards;
+    animation: fade_in 0s linear calc(var(--hi_page-anim-delay) + var(--present_page-anim-delay) + .6s) forwards;
 }
 
 /* Final flashing text (3) animation */

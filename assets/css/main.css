@@ -1,10 +1,11 @@
 :root {
     --background: #020207;
     --text: #ffffff;
-    --scrolling-text: #070709;
-    --scroll_anim-time: 80s;
+
+    --intro-anim-duration: 0s;
 }
 
+/* Disable intro animation (re-enabled in intro-animation.css) */
 .pre-content {
     display: none;
 }
@@ -17,52 +18,6 @@ main {
     top: 0;
     left: 0;
     z-index: 0;
-}
-
-main > .background {
-    background-color: var(--background);
-    min-height: 100dvh;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-@keyframes scroll_rtl {
-    from { transform: translate(0%, -240dvh); }
-    to { transform: translate(-50%, -240dvh); }
-}
-
-@keyframes scroll_ltr {
-    from { transform: translate(-50%, -240dvh); }
-    to { transform: translate(0%, -240dvh); }
-}
-
-main > .background .scroll::before {
-    content: "welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind";
-}
-main > .background .scroll {
-    font-family: 'Inter', sans-serif;
-    color: var(--scrolling-text);
-    font-weight: 900;
-    font-size: 25vh;
-    text-transform: uppercase;
-    rotate: -10deg;
-}
-
-main > .background .scroll.rtl {
-    animation: scroll_rtl var(--scroll_anim-time) linear infinite;
-}
-
-main > .background .scroll.ltr {
-    animation: scroll_ltr var(--scroll_anim-time) linear infinite;
-}
-
-@supports (font-variation-settings: normal) {
-    main > .background .scroll { font-family: 'Inter var', sans-serif; }
 }
 
 main > .content {
