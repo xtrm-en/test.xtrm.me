@@ -1,0 +1,65 @@
+:root {
+    /* TODO: refactor those awful var names */
+    --background: #020207;
+    --scrolling-text: #070709;
+    --scroll_anim-time: 80s;
+}
+
+.background {
+    background-color: var(--background);
+    min-height: 100dvh;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes scroll_rtl {
+    /* TODO: actually find a way to have multiple transformations applied at once, this is getting ridiculous */
+    from { transform: translate(0%, -240dvh); }
+    to { transform: translate(-50%, -240dvh); }
+}
+
+@keyframes scroll_ltr {
+    from { transform: translate(-50%, -240dvh); }
+    to { transform: translate(0%, -240dvh); }
+}
+
+.background .text::before {
+    /* this looks like shit, feels like shit, smells like shit, but is the only thing that works for now */
+    /* we need a string repetition function in CSS, but fuck me i guess */
+    content: "welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind welcome to my mind";
+}
+
+@keyframes appear {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+.background .text {
+    font-family: 'Inter', sans-serif;
+    color: var(--scrolling-text);
+    font-weight: 900;
+    font-size: 25vh;
+    text-transform: uppercase;
+    animation: appear .5s ease-out var(--intro-anim-duration) forwards;
+}
+
+.background .wrap {
+    rotate: -10deg;
+}
+
+.background .rtl {
+    animation: scroll_rtl var(--scroll_anim-time) linear infinite;
+}
+
+.background .ltr {
+    animation: scroll_ltr var(--scroll_anim-time) linear infinite;
+}
+
+@supports (font-variation-settings: normal) {
+    .background .scroll { font-family: 'Inter var', sans-serif; }
+}
